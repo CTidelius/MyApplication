@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#dae9ec"
     tools:context="com.example.carltidelius.myapplication.MainActivity">
 
     <Button
         android:id="@+id/button"
-        android:layout_width="123dp"
-        android:layout_height="40dp"
-        android:hint="@string/Accelerometer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:text="@string/Accelerometer"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="16dp" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginTop="30dp"
+        android:onClick="accelerometer"/>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="@string/Compass"
+        android:layout_marginTop="300dp"
+        android:onClick="compass"/>
+</RelativeLayout>
