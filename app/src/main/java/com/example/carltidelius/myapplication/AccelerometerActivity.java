@@ -25,7 +25,7 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
         sensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         //register sensorlistener
-        sm.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sm.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
 
         //Assign textviews
         X = (TextView)findViewById(R.id.X);
@@ -45,13 +45,23 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        X.setText("X: " + event.values[0]);
-        Y.setText("Y: " + event.values[1]);
-        Z.setText("Z: " + event.values[2]);
+        X.setText("X: " + Math.round(event.values[0]));
+        Y.setText("Y: " + Math.round(event.values[1]));
+        Z.setText("Z: " + Math.round(event.values[2]));
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+    protected void onResume() {
+        super.onResume();
+        sm.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
+    }
+
+    protected void onPause() {
+        super.onPause();
+        sm.unregisterListener(this, sensor);
 
     }
 }

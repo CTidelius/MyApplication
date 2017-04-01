@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="Accelerometer">Do things</string>
-    <string name="Compass">Do Other Things</string>
+    <string name="Accelerometer">Do Accelerometer Things</string>
+    <string name="Compass">Do Compass Things</string>
 
     <string name="go_back">Go Back</string>
     <string name="X">X</string>
     <string name="Y">Y</string>
     <string name="Z">Z</string>
+    <string name="Value_of_compass">Value of Compass</string>
+
 
 </resources>
